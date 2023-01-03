@@ -1,0 +1,8 @@
+prefix=/home/fldec/t_ws/install
+
+Name: amrrobo
+Description: Description of amrrobo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

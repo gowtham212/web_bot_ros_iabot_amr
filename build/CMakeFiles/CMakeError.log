@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/fldec/t_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2d289/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d289.dir/build.make CMakeFiles/cmTC_2d289.dir/build
+make[1]: Entering directory '/home/fldec/t_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d289.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2d289.dir/CheckSymbolExists.c.o   -c /home/fldec/t_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_2d289
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d289.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2d289.dir/CheckSymbolExists.c.o  -o cmTC_2d289 
+CMakeFiles/cmTC_2d289.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2d289.dir/build.make:97: recipe for target 'cmTC_2d289' failed
+make[1]: *** [cmTC_2d289] Error 1
+make[1]: Leaving directory '/home/fldec/t_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2d289/fast' failed
+make: *** [cmTC_2d289/fast] Error 2
+
+File /home/fldec/t_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/fldec/t_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_faebd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_faebd.dir/build.make CMakeFiles/cmTC_faebd.dir/build
+make[1]: Entering directory '/home/fldec/t_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_faebd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_faebd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_faebd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_faebd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_faebd.dir/CheckFunctionExists.c.o  -o cmTC_faebd -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_faebd.dir/build.make:97: recipe for target 'cmTC_faebd' failed
+make[1]: *** [cmTC_faebd] Error 1
+make[1]: Leaving directory '/home/fldec/t_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_faebd/fast' failed
+make: *** [cmTC_faebd/fast] Error 2
+
+
